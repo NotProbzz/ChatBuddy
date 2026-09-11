@@ -1,0 +1,16 @@
+{
+  "name": "benchmate",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "build": "npm run build -w frontend",
+    "build:frontend": "npm run build -w frontend",
+    "dev": "npm run build:frontend && cd backend && node server.js"
+  },
+  "dependencies": {
+    "mongodb-memory-server": "^11.2.0"
+  }
+}

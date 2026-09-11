@@ -1,0 +1,76 @@
+@import "tailwindcss";
+@custom-variant dark (&:is(.dark *));
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  font-family: "Inter", "Segoe UI", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #172033;
+  background-color: #f5f8ff;
+}
+
+html.dark :root {
+  color: #dbdee1;
+  background-color: #313338;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #f5f8ff;
+  color: #172033;
+}
+
+html.dark body {
+  background-color: #313338;
+  color: #dbdee1;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #eef3ff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a6b3c9;
+}
+
+.scroll-style,
+.scroll-style-x {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 #eef3ff;
+}
+
+.hiddenbox {
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}

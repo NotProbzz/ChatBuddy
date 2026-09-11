@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+      (function() {
+        try {
+          const orig = window.fetch;
+          Object.defineProperty(window, 'fetch', {
+            get: () => orig,
+            set: (v) => { console.log('Prevented fetch override'); },
+            configurable: true
+          });
+        } catch (e) { console.error('fetch patch failed', e); }
+      })();
+    </script>
+
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>frontend</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
